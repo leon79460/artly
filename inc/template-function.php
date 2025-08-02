@@ -117,3 +117,4 @@ function artly_tags(){
     <?php
   }
 }
+
