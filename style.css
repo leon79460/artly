@@ -18,3 +18,23 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .tp-breadcrumb-title span {
     color: var(--tp-theme-color-2);
 }
+
+.tp-newsletter-box form {
+    display: inherit;
+}
+
+.tp-newsletter-box form .mc4wp-form-fields {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1750px;
+    }
+}
