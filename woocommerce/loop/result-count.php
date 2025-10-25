@@ -22,7 +22,7 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 ?>
-<p class="woocommerce-result-count mb-0" role="alert" aria-relevant="all" <?php echo (empty($orderedby) || 1 === intval($total)) ? '' : 'data-is-sorted-by="true"'; ?>>
+<p class="woocommerce-result-count mb-0 " role="alert" aria-relevant="all" <?php echo (empty($orderedby) || 1 === intval($total)) ? '' : 'data-is-sorted-by="true"'; ?>>
 	<?php
 	// phpcs:disable WordPress.Security
 	if (1 === intval($total)) {
