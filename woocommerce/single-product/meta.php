@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single Product Meta
  *
@@ -17,26 +18,50 @@
 
 use Automattic\WooCommerce\Enums\ProductType;
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
-
+$post_cats = get_the_terms(get_the_ID(), 'product_cat');
+$post_tags = get_the_terms(get_the_ID(), 'product_tag');
 global $product;
 ?>
 <div class="product_meta">
 
-	<?php do_action( 'woocommerce_product_meta_start' ); ?>
+	<div class="tp-product-details-query-item d-flex align-items-center">
+		<?php if (wc_product_sku_enabled() && ($product->get_sku() || $product->is_type(ProductType::VARIABLE))) : ?>
+			<span><?php esc_html_e('SKU:', 'artly'); ?></span>
+			<p> <?php echo ($sku = $product->get_sku()) ? $sku : esc_html__('N/A', 'woocommerce'); ?> </p>
+		<?php endif; ?>
+	</div>
 
-	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( ProductType::VARIABLE ) ) ) : ?>
+	<div class="tp-product-details-query-item d-flex align-items-center">
+		<span><?php esc_html_e('Category:', 'artly'); ?> </span>
+		<p>
+			<?php
+			$html = '';
+			foreach ($post_cats as $key => $cat) {
 
-		<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span>
+				$html .= '<span>' . $cat->name . '</span>,';
+			}
+			echo rtrim($html, ',');
 
-	<?php endif; ?>
+			?>
+		</p>
+	</div>
 
-	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
-
-	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
-
-	<?php do_action( 'woocommerce_product_meta_end' ); ?>
+	<div class="tp-product-details-query-item d-flex align-items-center">
+		<span><?php esc_html_e('Tag:', 'artly'); ?> </span>
+		<p>
+			<?php
+			$html = '';
+			if (!empty($post_tags) && !is_wp_error($post_tags)) {
+				foreach ($post_tags as $key => $tag) {
+					$html .= '<span>' . esc_html($tag->name) . '</span>, ';
+				}
+				echo rtrim($html, ',');
+			}
+			?>
+		</p>
+	</div>
 
 </div>

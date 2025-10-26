@@ -76,3 +76,34 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     margin-bottom: 4px;
     text-align: center;
 }
+
+.woocommerce #content div.product div.images,
+.woocommerce div.product div.images,
+.woocommerce-page #content div.product div.images,
+.woocommerce-page div.product div.images {
+    float: none;
+    width: 100%;
+}
+
+/* .single-product .tp-shop-area{
+    background-color: #EFF1F5;
+} */
+
+.woocommerce .star-rating span::before {
+    color: #FFB21D;
+}
+.container-1230{
+    max-width: 1230px;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li {
+    width: 25%;
+    float: left;
+    margin: 0;
+    list-style: none;
+    padding: 5px 5px 0px 5px;
+}
+.woocommerce div.product div.images .flex-control-thumbs li .flex-active {
+    border: 1px solid #0A0E19;
+    transition: all 0.3s ease-in-out;
+}

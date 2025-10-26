@@ -72,6 +72,7 @@ if (! function_exists('artly_setup')) :
 			'gallery',
 			'status',
 			'audio',
+			'lightbox',
 			'chat'
 		));
 
@@ -81,7 +82,12 @@ if (! function_exists('artly_setup')) :
 
 		add_theme_support('woocommerce');
 
+		add_theme_support('wc-product-gallery-lightbox');  // Lightbox
+		add_theme_support('wc-product-gallery-slider');
+
+		
 	}
+
 endif; // artly_setup
 add_action('after_setup_theme', 'artly_setup');
 
