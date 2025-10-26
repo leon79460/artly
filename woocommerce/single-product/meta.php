@@ -39,6 +39,7 @@ global $product;
 		<p>
 			<?php
 			$html = '';
+
 			foreach ($post_cats as $key => $cat) {
 
 				$html .= '<span>' . $cat->name . '</span>,';
@@ -56,7 +57,7 @@ global $product;
 			$html = '';
 			if (!empty($post_tags) && !is_wp_error($post_tags)) {
 				foreach ($post_tags as $key => $tag) {
-					$html .= '<span>' . esc_html($tag->name) . '</span>, ';
+					$html .= '<span>' . esc_html($tag->name) . '</span>,';
 				}
 				echo rtrim($html, ',');
 			}
