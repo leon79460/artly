@@ -107,3 +107,87 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     border: 1px solid #0A0E19;
     transition: all 0.3s ease-in-out;
 }
+
+/* woocommerce single page review css */
+
+.woocommerce .star-rating {
+    float: none;
+    font-size: 20px;
+}
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+    padding: 0px 0px 0px 30px;
+}
+.woocommerce #reviews #comments ol.commentlist {
+    padding: 25px 0px 0px 0px;
+}
+
+.woocommerce #reviews #comments h2 {
+    clear: none;
+    font-family: var(--tp-font-heading);
+}
+strong.woocommerce-review__author {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+span.woocommerce-review__dash {
+    display: none;
+}
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+    border: none;
+}
+.woocommerce .review {
+    margin-left: 50px;
+}
+.woocommerce #reviews #comments ol.commentlist li img.avatar {
+
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 100%;
+}
+
+/* Review form css */
+.tp-product-details-tab-nav .comment-form-author {
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+}
+
+.tp-product-details-tab-nav .comment-form-email {
+    width: 50%;
+    float: left;
+    padding-left: 15px;
+}
+
+.tp-product-details-tab-nav .comment-form-cookies-consent {
+    clear: both;
+}
+.woocommerce #review_form #respond .form-submit input {
+    left: auto;
+    background: var(--tp-theme-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 0px;
+}
+.woocommerce #review_form #respond .form-submit input:hover {
+    left: auto;
+    background: #FFE81D;
+    color: black;
+    padding: 15px 40px;
+    border-radius: 0px;
+}
+
+section.related.products {
+    padding-top: 50px;
+
+}
+section.related.products h2 {
+    padding-bottom: 20px;
+    text-align: center;
+}

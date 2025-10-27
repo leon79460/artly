@@ -50,11 +50,14 @@ if ($product->is_in_stock()) : ?>
 		<div class="tp-product-details-add-to-cart mb-15 mr-10">
 			<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="tp-product-details-add-to-cart-btn w-100  alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
 		</div>
+
+		<?php if (function_exists('woosw_init')): ?>
 		<div class="tp-product-details-wishlist mb-15">
 			<div class="tp-product-details-wishlist-btn">
 				<?php echo do_shortcode('[woosw]'); ?>
 			</div>
 		</div>
+		<?php endif; ?>
 
 		<?php do_action('woocommerce_after_add_to_cart_button'); ?>
 	</form>

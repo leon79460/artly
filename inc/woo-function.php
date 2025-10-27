@@ -115,21 +115,27 @@ function artly_product_grid()
       <!-- product action -->
       <div class="tp-product-action tp-product-action-blackStyle">
         <div class="tp-product-action-item d-flex flex-column">
+          
+          <?php if (function_exists('woosc_init')): ?>
+            <div class="tp-product-action-btn tp-product-add-cart-btn">
+              <?php echo do_shortcode('[woosc]'); ?>
+              <span class="tp-product-tooltip"><?php echo esc_html__('Add To Compare', 'artly'); ?></span>
+            </div>
+          <?php endif; ?>
 
-          <div class="tp-product-action-btn tp-product-add-cart-btn">
-            <?php echo do_shortcode('[woosc]'); ?>
-            <span class="tp-product-tooltip">Add To Compare</span>
-          </div>
+          <?php if (function_exists('woosq_init')): ?>
+            <div class="tp-product-action-btn tp-product-quick-view-btn">
+              <?php echo do_shortcode('[woosq]'); ?>
+              <span class="tp-product-tooltip"><?php echo esc_html__('Quick View', 'artly'); ?></span>
+            </div>
+          <?php endif; ?>
 
-          <div class="tp-product-action-btn tp-product-quick-view-btn">
-            <?php echo do_shortcode('[woosq]'); ?>
-            <span class="tp-product-tooltip">Quick View</span>
-          </div>
-
-          <div class="tp-product-action-btn tp-product-add-to-wishlist-btn">
-            <?php echo do_shortcode('[woosw]'); ?>
-            <span class="tp-product-tooltip">Add To Wishlist</span>
-          </div>
+          <?php if (function_exists('woosw_init')): ?>
+            <div class="tp-product-action-btn tp-product-add-to-wishlist-btn">
+              <?php echo do_shortcode('[woosw]'); ?>
+              <span class="tp-product-tooltip"><?php echo esc_html__('Add To Wishlist', 'artly'); ?></span>
+            </div>
+          <?php endif; ?>
 
         </div>
       </div>
@@ -215,7 +221,7 @@ function artly_product_details()
 
     <!-- actions -->
     <div class="tp-product-details-action-wrapper mb-10">
-      <h3 class="tp-product-details-action-title">Quantity</h3>
+      <h3 class="tp-product-details-action-title"><?php echo esc_html__('Quantity', 'artly'); ?> </h3>
 
       <div class="tp-product-details-action-item-wrapper">
         <?php woocommerce_template_single_add_to_cart(); ?>

@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		do_action( 'woocommerce_review_before', $comment );
 		?>
 
-		<div class="comment-text">
+		<div class="comment-text test">
 
 			<?php
 			/**
