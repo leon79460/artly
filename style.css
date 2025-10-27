@@ -191,3 +191,25 @@ section.related.products h2 {
     padding-bottom: 20px;
     text-align: center;
 }
+
+/* cart page css */
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+    float: none;
+    width: 100%;
+}
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+    float: none;
+    width: 100%;
+    padding: 30px 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 5px;
+}
+.woocommerce table.shop_table {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+}
