@@ -16,9 +16,23 @@ function artly_header_section() {
     'header_section',
     [
       'title'       => esc_html__( 'Header Info', 'kirki' ),
-      'description' => esc_html__( 'My Section Description.', 'kirki' ),
+      'description' => esc_html__( 'Header section.', 'kirki' ),
       'panel'       => 'artly_theme_options',
       'priority'    => 160,
+    ]
+  );
+
+  new \Kirki\Field\Select(
+    [
+      'settings'    => 'header_selections_kirki',
+      'label'       => esc_html__('Select your header', 'kirki'),
+      'section'     => 'header_section',
+      'default'     => 'header-style-kirki-1',
+      'placeholder' => esc_html__('Choose an option for header', 'kirki'),
+      'choices'     => [
+        'header-style-kirki-1' => esc_html__('Header Style 1', 'kirki'),
+        'header-style-kirki-2' => esc_html__('Header Style 2', 'kirki'),
+      ],
     ]
   );
   

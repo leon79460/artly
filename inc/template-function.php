@@ -1,4 +1,27 @@
-<?php 
+<?php
+
+// Header variations function
+function artly_headers()
+{
+  $header_style = function_exists('get_field') ? get_field('header_style') : '';
+  $header_selections_kirki = get_theme_mod('header_selections_kirki', 'header-style-kirki-1');
+
+  if ($header_style == 'header_style-1') {
+    get_template_part('template-parts/header/header-1');
+  } elseif ($header_style == 'header_style-2') {
+    get_template_part('template-parts/header/header-2');
+  } else {
+    if ($header_selections_kirki == 'header-style-kirki-1') {
+      get_template_part('template-parts/header/header-1');
+    } elseif ($header_selections_kirki == 'header-style-kirki-2') {
+      get_template_part('template-parts/header/header-2');
+    }
+  }
+}
+
+
+
+
 
 // Header Logo Function 
 function artly_header_logo() {

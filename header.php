@@ -31,16 +31,7 @@
 
 
 
-    <?php echo get_template_part('template-parts/header/header-1'); ?>
+    <?php artly_headers(); ?>
     <?php echo get_template_part('template-parts/header/offcanvas'); ?>
     <?php echo get_template_part('template-parts/header/header-search'); ?>
-
-    <?php artly_breadcrumb(); 
-
-//  my_function();
-//  my_function_2();
-//  my_function_3();
-
-//  do_action('my_hook');
-
-// echo apply_filters('my_filter' , 'Hello WP');
+    <?php artly_breadcrumb();
