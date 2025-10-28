@@ -167,6 +167,20 @@ function footer_logo(){
       'priority'    => 160,
     ]
   );
+
+  new \Kirki\Field\Select(
+    [
+      'settings'    => 'footer_selections_kirki',
+      'label'       => esc_html__('Select your footer', 'kirki'),
+      'section'     => 'footer_section',
+      'default'     => 'footer-style-kirki-1',
+      'placeholder' => esc_html__('Choose an option for header', 'kirki'),
+      'choices'     => [
+        'footer-style-kirki-1' => esc_html__('Footer Style 1', 'kirki'),
+        'footer-style-kirki-2' => esc_html__('Footer Style 2', 'kirki'),
+      ],
+    ]
+  );
   
   new \Kirki\Field\Image(
     [

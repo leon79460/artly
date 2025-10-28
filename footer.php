@@ -1,7 +1,6 @@
-<?php echo get_template_part('template-parts/footer/footer-1'); ?>
+<?php echo artly_footers(); ?>
 
     <?php wp_footer(); ?>
 
 </body>
 </html>
-

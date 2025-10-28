@@ -19,6 +19,24 @@ function artly_headers()
   }
 }
 
+// Footer variations function
+function artly_footers(){
+  $footer_style = function_exists('get_field') ? get_field('footer_style') : '';
+  $footer_selections_kirki = get_theme_mod('footer_selections_kirki', 'footer-style-kirki-1');
+
+  if($footer_style == 'footer_style_1'){
+    get_template_part('template-parts/footer/footer-1');
+  }elseif($footer_style == 'footer_style_2'){
+    get_template_part('template-parts/footer/footer-2');
+  }else{
+    if($footer_selections_kirki == 'footer-style-kirki-1'){
+      get_template_part('template-parts/footer/footer-1');
+    }elseif($footer_selections_kirki == 'footer-style-kirki-2'){
+      get_template_part('template-parts/footer/footer-2');
+    }
+  }
+  }
+
 
 
 
