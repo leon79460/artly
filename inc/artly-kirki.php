@@ -22,6 +22,20 @@ function artly_header_section() {
     ]
   );
 
+  new \Kirki\Field\Checkbox_Switch(
+    [
+      'settings'    => 'header_right',
+      'label'       => esc_html__(' Header Right Switch', 'kirki'),
+      'description' => esc_html__('Simple switch control', 'kirki'),
+      'section'     => 'header_section',
+      'default'     => 'off',
+      'choices'     => [
+        'on'  => esc_html__('Enable', 'kirki'),
+        'off' => esc_html__('Disable', 'kirki'),
+      ],
+    ]
+  );
+
   new \Kirki\Field\Select(
     [
       'settings'    => 'header_selections_kirki',

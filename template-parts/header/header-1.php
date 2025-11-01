@@ -1,7 +1,8 @@
 <?php
 
 $header_number = get_theme_mod('header_number', '02 (256) 256 025'); 
-$header_number_title = get_theme_mod('header_number_title', 'Free Call'); 
+$header_number_title = get_theme_mod('header_number_title', 'Free Call');
+$header_right = get_theme_mod('header_right', false); 
 
 
 
@@ -24,6 +25,8 @@ $header_number_title = get_theme_mod('header_number_title', 'Free Call');
                                     <?php artly_main_menu(); ?>
                                 </nav>
                             </div>
+
+                            <?php if($header_right) :?>
                             <div class="tp-header-right d-flex justify-content-end flex-wrap align-items-center">
                                 <div class="tp-header-search d-none d-md-flex">
                                     <button class="d-flex align-items-center tp-search-toggle"><i class="flaticon-search"></i></button>
@@ -48,6 +51,8 @@ $header_number_title = get_theme_mod('header_number_title', 'Free Call');
                                     <button class="tp-offcanvas-toogle"><i class="flaticon-menu"></i></button>
                                 </div>
                             </div>
+                            <?php endif; ?>
+
                         </div>
                     </div>
                 </div>
